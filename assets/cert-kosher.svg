@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210">
+  <defs>
+    <path id="k-top" d="M 8,100 A 92,92 0 0,1 192,100"/>
+  </defs>
+  <!-- Background -->
+  <circle cx="100" cy="100" r="97" fill="white" stroke="#B8960C" stroke-width="1.8"/>
+  <!-- Inner ring of outer double -->
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#B8960C" stroke-width="1.2"/>
+  <!-- Curved top text -->
+  <text fill="#B8960C" font-family="Inter,Helvetica,sans-serif" font-size="11" font-weight="600" letter-spacing="2.5">
+    <textPath href="#k-top" startOffset="50%" text-anchor="middle">KOSHER CERTIFIER</textPath>
+  </text>
+  <!-- Inner circle -->
+  <circle cx="100" cy="95" r="63" fill="none" stroke="#B8960C" stroke-width="1.8"/>
+  <!-- K letter -->
+  <text x="103" y="136" font-family="Georgia,'Times New Roman',serif" font-size="84" font-weight="700" fill="#B8960C" text-anchor="middle" font-style="italic">K</text>
+  <!-- Ribbon banner -->
+  <path d="M 26,150 L 174,150 L 183,159 L 174,168 L 26,168 L 17,159 Z" fill="white" stroke="#B8960C" stroke-width="1.3"/>
+  <text x="100" y="163.5" font-family="Inter,Helvetica,sans-serif" font-size="9" fill="#B8960C" text-anchor="middle" letter-spacing="1.5">★  SINCE 1935  ★</text>
+  <!-- IN PROGRESS -->
+  <text x="100" y="187" font-family="Inter,Helvetica,sans-serif" font-size="11" font-weight="700" fill="#B8960C" text-anchor="middle" letter-spacing="2.5" font-style="italic">IN PROGRESS</text>
+</svg>

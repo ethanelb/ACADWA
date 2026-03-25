@@ -6,7 +6,7 @@
   <title>ACADWA — Export-Ready Pasta &amp; Flour Manufacturing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Serif+Display:ital@0;1&family=Abril+Fatface&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>
     history.scrollRestoration = 'manual';
@@ -19,26 +19,27 @@
   <nav>
   <div class="nav-inner">
     <div class="nav-logo">
-      <img src="assets/logo.png" alt="ACADWA" />
+      <img src="assets/logo.jpg" alt="ACADWA" />
     </div>
     <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
-      <li><a href="#flour">Flour</a></li>
+      <li><a href="#products">Our Pasta</a></li>
+      <li><a href="#flour">Our Flour</a></li>
       <li><a href="#quality">Quality</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact" class="nav-cta">Work With Us</a></li>
+      <li><a href="#who-we-are">Our Story</a></li>
+      <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
     </ul>
   </div>
   </nav>
 
   <!-- ===== HERO ===== -->
   <div class="hero">
-    <h1 class="hero-intro-title">From the West African Fields<br>to Tennessee Tables</h1>
-    <div class="hero-image"></div>
-    <div class="hero-bottom">
+    <div class="hero-left">
+      <h1 class="hero-intro-title">From the West African Fields<br>to Tennessee Tables</h1>
       <a href="mailto:info@acadwa.com" class="hero-cta">Work With Us</a>
     </div>
+    <div class="hero-image-wrap"><div class="hero-image"></div></div>
   </div>
+
 
   <!-- ===== PASTA FORMATS VISUAL ===== -->
   <div class="pasta-formats">
@@ -46,34 +47,46 @@
     <div class="pasta-formats-grid">
 
       <div class="pf-card">
-        <div class="pf-img" style="background-image:url('assets/pasta-spaghetti.png')"></div>
+        <div class="pf-img" style="background-image:url('assets/pasta-spaghetti.jpg')"></div>
         <div class="pf-overlay">
-          <span class="pf-num">01</span>
           <h3 class="pf-name">Spaghetti</h3>
+          <div class="pf-details">
+            <span class="pf-detail">Cook: 8–10 min</span>
+            <span class="pf-detail">Classic · Organic · Gluten-Free</span>
+          </div>
         </div>
       </div>
 
       <div class="pf-card">
-        <div class="pf-img" style="background-image:url('assets/pasta-penne.png')"></div>
+        <div class="pf-img" style="background-image:url('assets/pasta-penne.jpg')"></div>
         <div class="pf-overlay">
-          <span class="pf-num">02</span>
           <h3 class="pf-name">Penne</h3>
+          <div class="pf-details">
+            <span class="pf-detail">Cook: 10–12 min</span>
+            <span class="pf-detail">Classic · Organic · Gluten-Free</span>
+          </div>
         </div>
       </div>
 
       <div class="pf-card">
-        <div class="pf-img" style="background-image:url('assets/pasta-elbows.png')"></div>
+        <div class="pf-img" style="background-image:url('assets/pasta-elbows.jpg')"></div>
         <div class="pf-overlay">
-          <span class="pf-num">03</span>
           <h3 class="pf-name">Elbows</h3>
+          <div class="pf-details">
+            <span class="pf-detail">Cook: 7–9 min</span>
+            <span class="pf-detail">Classic · Organic · Gluten-Free</span>
+          </div>
         </div>
       </div>
 
       <div class="pf-card">
-        <div class="pf-img" style="background-image:url('assets/pasta-angelhair.png')"></div>
+        <div class="pf-img" style="background-image:url('assets/pasta-angelhair.jpg')"></div>
         <div class="pf-overlay">
-          <span class="pf-num">04</span>
           <h3 class="pf-name">Angel Hair</h3>
+          <div class="pf-details">
+            <span class="pf-detail">Cook: 4–6 min</span>
+            <span class="pf-detail">Classic · Organic · Gluten-Free</span>
+          </div>
         </div>
       </div>
 
@@ -83,36 +96,59 @@
 
   <!-- ===== PRODUCTS — PASTA ===== -->
   <section class="products" id="products">
-    <div class="container products-layout">
-      <div class="products-left">
+    <div class="container products-layout" data-active="classic">
+      <div class="products-left products-reveal-left">
         <div class="section-header">
-          <p class="section-label">Product Lines</p>
+          <p class="section-label">Pasta · Product Lines</p>
           <div class="product-shapes-global">
             <span class="product-shapes-label">Available Shapes — All Lines</span>
             <span class="product-shapes-list">Spaghetti · Penne · Elbows · Angel Hair</span>
           </div>
         </div>
-        <div class="product-row">
+        <div class="product-row active" data-line="classic">
           <div class="product-row-index">01</div>
-          <div class="product-row-content">
+          <div class="product-row-body">
             <div class="product-row-top"><h3>Classic Durum Pasta</h3></div>
+            <div class="product-row-specs">
+              <span class="prs-main">100% Durum Semolina · Stone-milled</span>
+              <span>Kosher · Vegan · Non-GMO</span>
+              <span>12 oz · 16 oz</span>
+            </div>
           </div>
         </div>
-        <div class="product-row">
+        <div class="product-row" data-line="organic">
           <div class="product-row-index">02</div>
-          <div class="product-row-content">
+          <div class="product-row-body">
             <div class="product-row-top"><h3>Organic Durum Pasta</h3></div>
+            <div class="product-row-specs">
+              <span class="prs-main">USDA Organic · ECOCERT certified</span>
+              <span>Kosher · Vegan · Non-GMO</span>
+              <span>12 oz · 16 oz</span>
+            </div>
           </div>
         </div>
-        <div class="product-row">
+        <div class="product-row" data-line="glutenfree">
           <div class="product-row-index">03</div>
-          <div class="product-row-content">
+          <div class="product-row-body">
             <div class="product-row-top"><h3>Gluten-Free Line</h3></div>
+            <div class="product-row-specs">
+              <span class="prs-main">Rice & Corn blend · &lt;20ppm tested</span>
+              <span>Certified Gluten-Free · Vegan</span>
+              <span>12 oz · 16 oz</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-badges">
+          <p class="cert-badges-label">Certifications</p>
+          <div class="cert-badges-row">
+            <img src="assets/cert-badges.png" alt="Kosher · Organic · Gluten Free" class="cert-badges-img" />
+            <img src="assets/cert-vegan.png" alt="Vegan Friendly" class="cert-vegan-img" />
           </div>
         </div>
       </div>
-      <div class="products-img-wrap">
-        <img src="assets/products-display.png" alt="ACADWA pasta products"/>
+      <div class="products-img-wrap products-reveal-right">
+        <img src="assets/products-display.jpg" alt="ACADWA pasta products"/>
+        <div class="products-img-tint"></div>
       </div>
     </div>
   </section>
@@ -123,8 +159,13 @@
       <div class="flour-layout">
         <div class="flour-header">
           <p class="section-label">Flour Production</p>
-          <h2 class="section-title">Flour,<br>From Source</h2>
+          <h2 class="section-title"><span class="flour-t1">Flour,</span><br><span class="flour-t2">From Source</span></h2>
           <p class="section-sub">Milled in Lomé, Togo.</p>
+          <div class="flour-pkg-tag">
+            <span>3 lb</span>
+            <span class="flour-pkg-div"></span>
+            <span>5 lb</span>
+          </div>
         </div>
         <div class="flour-grid">
           <div class="flour-card">
@@ -158,7 +199,13 @@
         </div>
       </div>
       <div class="flour-video-wrap">
-        <video src="assets/flour.mp4" controls playsinline muted loop></video>
+        <video src="assets/flour.mp4" autoplay playsinline muted loop></video>
+        <div class="flour-video-overlay">
+          <button class="flour-video-btn" aria-label="Play/Pause">
+            <svg class="fv-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="fv-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -167,7 +214,7 @@
   <div class="cert-strip">
     <div class="cert-strip-header">
       <p class="section-label">Supplier Solutions</p>
-      <h2 class="cert-strip-title">Private Label<br>Solutions</h2>
+      <h2 class="cert-strip-title"><span class="pl-t1">Private Label</span><br><span class="pl-t2">Solutions</span></h2>
       <p class="cert-strip-sub">We adapt to your retail requirements — packaging, branding, SKU architecture, and documentation — all under your label.</p>
       <ul class="pl-inline-list">
         <li>
@@ -204,20 +251,21 @@
   </div>
 
   <!-- ===== ABOUT ===== -->
-  <section class="about" id="about">
+  <section class="about" id="quality">
     <div class="container">
       <div class="about-header">
-        <h2 class="about-title">Export-Ready Manufacturing</h2>
+        <h2 class="about-title"><span class="at-1">Export-Ready</span> <span class="at-2">Manufacturing</span></h2>
       </div>
       <div class="about-row">
         <div class="about-video-wrap">
-          <video src="assets/factory.mp4" controls playsinline muted loop></video>
+          <video src="assets/factory.mp4" autoplay playsinline muted loop></video>
+          <div class="av-overlay"><button class="av-btn" aria-label="Play/Pause"><svg class="av-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><svg class="av-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button></div>
         </div>
         <div class="about-row-text">
           <div class="about-facts">
             <div class="about-fact">
               <span class="about-fact-label">Production Capacity</span>
-              <span class="about-fact-value">+200 MT / Y</span>
+              <span class="about-fact-value" data-count="200000" data-suffix=" MT / Y">200,000 MT / Y</span>
             </div>
             <div class="about-fact">
               <span class="about-fact-label">Location</span>
@@ -228,12 +276,16 @@
               <span class="about-fact-value">3–4 weeks</span>
             </div>
             <div class="about-fact">
-              <span class="about-fact-label">Incoterms</span>
-              <span class="about-fact-value">FOB / CIF</span>
+              <span class="about-fact-label">Distribution</span>
+              <span class="about-fact-value">DC / DSD</span>
             </div>
             <div class="about-fact">
               <span class="about-fact-label">Containers</span>
-              <span class="about-fact-value">20' / 40'</span>
+              <span class="about-fact-value">20ft / 40ft</span>
+            </div>
+            <div class="about-fact">
+              <span class="about-fact-label">Units / Container</span>
+              <span class="about-fact-value">60,000 – 90,000 units</span>
             </div>
             <div class="about-fact">
               <span class="about-fact-label">Sampling</span>
@@ -248,7 +300,8 @@
       </div>
       <div class="about-row about-row--reverse">
         <div class="about-video-wrap">
-          <video src="assets/manufacturing.mp4" controls playsinline muted loop></video>
+          <video src="assets/manufacturing.mp4" autoplay playsinline muted loop></video>
+          <div class="av-overlay"><button class="av-btn" aria-label="Play/Pause"><svg class="av-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><svg class="av-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg></button></div>
         </div>
         <div class="about-row-text">
           <p class="section-label" style="margin-bottom:16px">Production Quality</p>
@@ -283,34 +336,19 @@
 
   <!-- ===== IMPACT ===== -->
   <section class="impact">
-    <div class="container">
+    <div class="impact-photo">
+      <img src="assets/togo-factory.jpg" alt="ACADWA factory workers in Lomé, Togo" />
+    </div>
+    <div class="impact-content">
       <div class="impact-header">
-        <p class="section-label">West Africa · Lomé, Togo</p>
-        <h2 class="impact-title">Creating Opportunities &amp; Business in Togo</h2>
+        <p class="section-label" style="color:rgba(255,255,255,0.5)">West Africa · Lomé, Togo</p>
+        <h2 class="impact-title">Creating Business Opportunities in Tennessee &amp; Togo — West African Production Line</h2>
         <p class="impact-sub">ACADWA's factory in Lomé is more than a production site — it is an economic engine for West Africa, creating direct employment and driving a broader ecosystem of indirect opportunity across the region.</p>
-      </div>
-      <div class="impact-stats">
-        <div class="impact-stat">
-          <span class="impact-num">150<span class="impact-plus">+</span></span>
-          <span class="impact-label">Direct employees at our Lomé factory</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num">500<span class="impact-plus">+</span></span>
-          <span class="impact-label">Indirect jobs created across the supply chain</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num">68<span class="impact-plus">%</span></span>
-          <span class="impact-label">Of Togo's population under 25 — a workforce we invest in</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num">5.3<span class="impact-plus">%</span></span>
-          <span class="impact-label">Togo GDP growth rate — manufacturing is a key driver</span>
-        </div>
       </div>
       <div class="impact-body">
         <div class="impact-block">
-          <h4>Local Employment First</h4>
-          <p>Every role at our Lomé facility is filled locally. From production operators to quality control technicians, we train and develop Togolese talent — building careers, not just jobs.</p>
+          <h4>Tennessee Distribution Hub</h4>
+          <p>Based in Cleveland, TN, ACADWA drives local opportunity through regional distribution partnerships, last-mile logistics, and retail supply chain integration across the Southeast.</p>
         </div>
         <div class="impact-block">
           <h4>Supply Chain Ripple Effect</h4>
@@ -321,45 +359,40 @@
           <p>Lomé is West Africa's fastest-growing port city. ACADWA leverages its proximity to the Port of Lomé — one of the most modern deepwater ports on the African Atlantic coast — for efficient regional and international distribution.</p>
         </div>
       </div>
+      <div class="impact-stats">
+        <div class="impact-stat">
+          <span class="impact-num"><span class="impact-count" data-count="150">150</span><span class="impact-plus">+</span></span>
+          <span class="impact-label">Direct employees at our Lomé factory</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-num"><span class="impact-count" data-count="500">500</span><span class="impact-plus">+</span></span>
+          <span class="impact-label">Indirect jobs created across the supply chain</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-num"><span class="impact-count" data-count="68">68</span><span class="impact-plus">%</span></span>
+          <span class="impact-label">Of Togo's population under 25 — a workforce we invest in</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-num"><span class="impact-count" data-count="5.3">5.3</span><span class="impact-plus">%</span></span>
+          <span class="impact-label">Togo GDP growth rate — manufacturing is a key driver</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== VIDEOS ===== -->
-  <section class="videos" id="videos">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Our Story</p>
-        <h2 class="section-title">See Us in Action</h2>
-        <p class="section-sub">From our factory floor in Lomé to retail shelves worldwide — see how ACADWA operates.</p>
-      </div>
-      <div class="videos-main">
-        <div class="video-embed video-main">
-          <div class="video-placeholder">
-            <span class="video-placeholder-icon">▶</span>
-            <p class="video-placeholder-text">[Ajouter lien YouTube ici]</p>
-          </div>
-        </div>
-      </div>
-      <div class="videos-grid">
-        <div class="video-embed">
-          <div class="video-placeholder">
-            <span class="video-placeholder-icon">▶</span>
-            <p class="video-placeholder-text">[Ajouter lien YouTube ici]</p>
-          </div>
-        </div>
-        <div class="video-embed">
-          <div class="video-placeholder">
-            <span class="video-placeholder-icon">▶</span>
-            <p class="video-placeholder-text">[Ajouter lien YouTube ici]</p>
-          </div>
-        </div>
-        <div class="video-embed">
-          <div class="video-placeholder">
-            <span class="video-placeholder-icon">▶</span>
-            <p class="video-placeholder-text">[Ajouter lien YouTube ici]</p>
-          </div>
-        </div>
-      </div>
+  <!-- ===== DRONE ABOUT ===== -->
+  <section class="drone-about" id="who-we-are">
+    <video class="drone-video" src="assets/drone-factory.mp4" autoplay playsinline muted loop></video>
+    <div class="drone-overlay"></div>
+    <div class="drone-content">
+      <p class="drone-label">ACADWA LLC — American Company Agriculture Development in West Africa</p>
+      <h2 class="drone-title">
+        <span class="drone-t1">Manufacturing Line in Togo.</span>
+        <span class="drone-t2">Distribution Center in Tennessee.</span>
+      </h2>
+    </div>
+    <div class="drone-scroll-hint">
+      <span></span>
     </div>
   </section>
 
@@ -367,54 +400,64 @@
   <section class="contact" id="contact">
     <div class="contact-inner">
       <div class="contact-left">
-        <p class="section-label">Get In Touch</p>
-        <h2 class="contact-title">Let's Build<br>Something<br>Together</h2>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <span class="contact-detail-label">Address</span>
-            <span class="contact-detail-value">2655 Westside Drive NW<br>Cleveland, TN 37312</span>
+        <!-- col 1: title -->
+        <div class="contact-left-title">
+          <p class="section-label contact-label-reveal">Get In Touch</p>
+          <h2 class="contact-title">
+            <span class="ct-1">Let's Build</span>
+            <span class="ct-2">Something</span>
+            <span class="ct-3">Together</span>
+          </h2>
+        </div>
+        <!-- col 2: connector + details + persona -->
+        <div class="contact-left-meta">
+          <div class="contact-connector">
+            <div class="connector-node">
+              <span class="connector-dot"></span>
+              <div class="connector-info">
+                <span class="connector-city">Cleveland, TN</span>
+                <span class="connector-coord">35°09′N 84°52′W</span>
+              </div>
+            </div>
+            <div class="connector-line">
+              <svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="connector-path" d="M4 12 C 30 2, 90 22, 116 12" stroke="rgba(200,169,110,0.5)" stroke-width="1" fill="none" stroke-dasharray="4 3"/>
+              </svg>
+            </div>
+            <div class="connector-node connector-node--right">
+              <div class="connector-info connector-info--right">
+                <span class="connector-city">Lomé, Togo</span>
+                <span class="connector-coord">6°08′N 1°13′E</span>
+              </div>
+              <span class="connector-dot"></span>
+            </div>
           </div>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Phone / WhatsApp</span>
-            <span class="contact-detail-value">+1 (423) 650-6341</span>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="contact-detail-label">Address</span>
+              <span class="contact-detail-value">2655 Westside Drive NW, Cleveland, TN 37312</span>
+            </div>
           </div>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Email</span>
-            <span class="contact-detail-value">info@acadwa.com</span>
+          <div class="contact-persona">
+            <div class="persona-avatar">HS</div>
+            <div class="persona-info">
+              <span class="persona-name">Hunter Shamblin</span>
+              <span class="persona-role">Export Sales · ACADWA LLC</span>
+            </div>
           </div>
-          <div class="contact-detail">
-            <span class="contact-detail-label">Website</span>
-            <span class="contact-detail-value">acadwa.com</span>
+          <div class="persona-btns">
+            <a href="https://wa.me/14236506341" target="_blank" class="persona-btn persona-btn--wa">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.558 4.14 1.534 5.874L0 24l6.298-1.513A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.003-1.368l-.36-.214-3.732.896.931-3.624-.235-.372A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+              WhatsApp
+            </a>
+            <a href="mailto:info@acadwa.com" class="persona-btn persona-btn--mail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
           </div>
         </div>
       </div>
-      <div class="contact-right">
-        <div class="contact-form-wrap">
-          <h3>Send Us a Message</h3>
-          <p>Tell us about your retail requirements and we'll get back to you within 24 hours.</p>
-          <form>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Name</label>
-                <input type="text" placeholder="Your name" />
-              </div>
-              <div class="form-group">
-                <label>Company</label>
-                <input type="text" placeholder="Your company" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="your@email.com" />
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea placeholder="Tell us about your product needs, target SKUs, volume requirements..."></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send Message</button>
-          </form>
-        </div>
-      </div>
+
     </div>
   </section>
 
@@ -427,11 +470,11 @@
           <p class="footer-tagline">A Tennessee Company</p>
         </div>
         <ul class="footer-links">
-          <li><a href="#products">Products</a></li>
-          <li><a href="#flour">Flour</a></li>
+          <li><a href="#products">Our Pasta</a></li>
+          <li><a href="#flour">Our Flour</a></li>
           <li><a href="#quality">Quality</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#who-we-are">Our Story</a></li>
+          <li><a href="#contact">Partner With Us</a></li>
         </ul>
       </div>
       <div class="footer-contact-row">
@@ -449,6 +492,331 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    /* ── Scroll parallax (rAF throttled) ── */
+    const heroImage = document.querySelector('.hero-image');
+    let scrollRAF = null;
+    window.addEventListener('scroll', () => {
+      if (scrollRAF) return;
+      scrollRAF = requestAnimationFrame(() => {
+        scrollRAF = null;
+        if (heroImage) {
+          heroImage.style.backgroundPositionY = `calc(50% + ${window.scrollY * 0.18}px)`;
+        }
+        /* impact parallax */
+        if (impactSection && impactImg) {
+          const rect = impactSection.getBoundingClientRect();
+          const wh = window.innerHeight;
+          if (rect.top < wh && rect.bottom > 0) {
+            const progress = (wh - rect.top) / (wh + rect.height);
+            impactImg.style.transform = `translateY(${(progress - 0.5) * 60}px)`;
+          }
+        }
+      });
+    }, { passive: true });
+
+    /* ── Mouse parallax ── */
+    const hero = document.querySelector('.hero');
+    if (hero && heroImage) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+        heroImage.style.transform = `translate(${x * 16}px, ${y * 10}px) scale(1.04)`;
+      });
+      hero.addEventListener('mouseleave', () => {
+        heroImage.style.transform = 'translate(0,0) scale(1)';
+      });
+    }
+
+    /* ── Products section reveal ── */
+    const productsLayout = document.querySelector('.products-layout');
+    const revealEls = document.querySelectorAll('.products-reveal-left, .products-reveal-right');
+    const productsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          revealEls.forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 150));
+          productsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    if (productsLayout) productsObserver.observe(productsLayout);
+
+    /* ── Product row selector ── */
+    document.querySelectorAll('.product-row').forEach(row => {
+      row.addEventListener('click', () => {
+        document.querySelectorAll('.product-row').forEach(r => r.classList.remove('active'));
+        row.classList.add('active');
+        if (productsLayout) productsLayout.dataset.active = row.dataset.line;
+      });
+    });
+
+    /* ── Badge bounce ── */
+    const badgeRevealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.cert-badges-img, .cert-vegan-img').forEach((el, i) => {
+            setTimeout(() => el.classList.add('badge-visible'), i * 160);
+          });
+          badgeRevealObs.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    const certBadges = document.querySelector('.cert-badges');
+    if (certBadges) badgeRevealObs.observe(certBadges);
+
+    /* ── Form submission ── */
+    const contactForm = document.querySelector('.contact form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('.form-submit');
+        btn.textContent = 'Message Sent ✓';
+        btn.style.background = '#2A6B2A';
+        btn.disabled = true;
+      });
+    }
+
+    /* ── Contact: stagger reveal ── */
+    const contactSection = document.querySelector('.contact');
+    if (contactSection) {
+      const contactObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          contactSection.classList.add('visible');
+          ['.contact-label-reveal','.contact-title','.contact-connector','.contact-details','.contact-persona'].forEach((sel,i) => {
+            const el = contactSection.querySelector(sel);
+            if (el) setTimeout(() => el.classList.add('visible'), i * 150);
+          });
+          /* form right side */
+          const right = contactSection.querySelector('.contact-right');
+          if (right) setTimeout(() => right.classList.add('visible'), 200);
+          contactObs.disconnect();
+        }
+      }, { threshold: 0.15 });
+      contactObs.observe(contactSection);
+    }
+
+    /* ── Drone About: reveal + count-up ── */
+    const droneSection = document.querySelector('.drone-about');
+    const droneContent = document.querySelector('.drone-content');
+    const droneVideo = document.querySelector('.drone-video');
+    if (droneSection) {
+      const droneObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          droneSection.classList.add('visible');
+          /* stagger content children */
+          ['.drone-label','.drone-title','.drone-divider','.drone-sub','.drone-stats'].forEach((sel,i)=>{
+            const el = droneSection.querySelector(sel);
+            if(el) setTimeout(()=>el.classList.add('visible'), 300 + i*180);
+          });
+          /* count-up for numeric stats */
+          droneSection.querySelectorAll('.drone-stat-num[data-count]').forEach(el => {
+            const target = +el.dataset.count;
+            const start = performance.now(), dur = 1800;
+            (function step(now){
+              const p = Math.min((now-start)/dur,1), ease = 1-Math.pow(1-p,3);
+              el.textContent = Math.floor(ease*target);
+              if(p<1) requestAnimationFrame(step); else el.textContent = target;
+            })(start);
+          });
+          droneObs.disconnect();
+        }
+      }, { threshold: 0.25 });
+      droneObs.observe(droneSection);
+    }
+
+    /* ── Impact: photo parallax (handled in throttled scroll above) ── */
+    const impactSection = document.querySelector('.impact');
+    const impactImg = document.querySelector('.impact-photo img');
+
+    /* ── Impact: title clip reveal ── */
+    const impactHeader = document.querySelector('.impact-header');
+    new IntersectionObserver((e) => {
+      if (e[0].isIntersecting) e[0].target.classList.add('visible');
+    }, { threshold: 0.3 }).observe(impactHeader || document.body);
+
+    /* ── Impact: blocks stagger ── */
+    const impactBlocks = document.querySelectorAll('.impact-block');
+    new IntersectionObserver((e) => {
+      if (e[0].isIntersecting) impactBlocks.forEach((b,i) => setTimeout(()=>b.classList.add('visible'), i*140));
+    }, { threshold: 0.2 }).observe(impactBlocks[0] || document.body);
+
+    /* ── Impact: stats count-up + stagger ── */
+    const impactStats = document.querySelectorAll('.impact-stat');
+    new IntersectionObserver((e) => {
+      if (e[0].isIntersecting) {
+        impactStats.forEach((s,i) => setTimeout(()=>s.classList.add('visible'), i*120));
+        document.querySelectorAll('.impact-count').forEach(el => {
+          const target = parseFloat(el.dataset.count);
+          const isDecimal = target % 1 !== 0;
+          const dur = 1600, start = performance.now();
+          (function step(now){
+            const p = Math.min((now-start)/dur,1), ease = 1-Math.pow(1-p,3);
+            el.textContent = isDecimal ? (ease*target).toFixed(1) : Math.floor(ease*target);
+            if(p<1) requestAnimationFrame(step);
+            else el.textContent = isDecimal ? target.toFixed(1) : target;
+          })(start);
+        });
+      }
+    }, { threshold: 0.3 }).observe(impactStats[0] || document.body);
+
+    /* ── About: title split ── */
+    const aboutHeader = document.querySelector('.about-header');
+    new IntersectionObserver((e) => { if(e[0].isIntersecting){ aboutHeader.classList.add('visible'); } }, {threshold:0.4}).observe(aboutHeader || document.body);
+
+    /* ── About: zigzag row reveal ── */
+    document.querySelectorAll('.about-row').forEach((row, i) => {
+      new IntersectionObserver((e) => {
+        if(e[0].isIntersecting){ setTimeout(()=>row.classList.add('visible'), i*150); }
+      }, {threshold:0.15}).observe(row);
+    });
+
+    /* ── About: facts stagger ── */
+    const aboutFacts = document.querySelectorAll('.about-fact');
+    new IntersectionObserver((e) => {
+      if(e[0].isIntersecting){
+        aboutFacts.forEach((f,i) => setTimeout(()=>f.classList.add('visible'), i*80));
+        /* count-up for numeric facts */
+        document.querySelectorAll('.about-fact-value[data-count]').forEach(el => {
+          const target = +el.dataset.count, suffix = el.dataset.suffix || '';
+          const start = performance.now();
+          const dur = 1600;
+          (function step(now){
+            const p = Math.min((now-start)/dur,1), ease = 1-Math.pow(1-p,3);
+            el.textContent = Math.floor(ease*target).toLocaleString() + suffix;
+            if(p<1) requestAnimationFrame(step);
+            else el.textContent = target.toLocaleString() + suffix;
+          })(start);
+        });
+      }
+    }, {threshold:0.2}).observe(aboutFacts[0] || document.body);
+
+    /* ── About: quality items stagger ── */
+    const qualityItems = document.querySelectorAll('.about-quality-item');
+    new IntersectionObserver((e) => {
+      if(e[0].isIntersecting) qualityItems.forEach((q,i)=>setTimeout(()=>q.classList.add('visible'),i*140));
+    }, {threshold:0.2}).observe(qualityItems[0] || document.body);
+
+    /* ── About: videos play/pause ── */
+    document.querySelectorAll('.about-video-wrap').forEach(wrap => {
+      const vid = wrap.querySelector('video');
+      const btn = wrap.querySelector('.av-btn');
+      if(!vid||!btn) return;
+      btn.addEventListener('click', () => {
+        if(vid.paused){ vid.play(); btn.querySelector('.av-play').style.display='none'; btn.querySelector('.av-pause').style.display='block'; }
+        else { vid.pause(); btn.querySelector('.av-play').style.display='block'; btn.querySelector('.av-pause').style.display='none'; }
+      });
+    });
+
+    /* ── Private Label: title split + line + items ── */
+    const certStrip = document.querySelector('.cert-strip');
+    const plList = document.querySelector('.cert-strip-header .pl-inline-list');
+    const plItems = plList ? plList.querySelectorAll('li') : [];
+
+    const certObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          certObs.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    if (certStrip) certObs.observe(certStrip);
+
+    const lineObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('line-visible');
+          plItems.forEach((li, i) => setTimeout(() => li.classList.add('visible'), 200 + i * 150));
+          lineObs.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    if (plList) lineObs.observe(plList);
+
+    /* ── Flour header title split ── */
+    const flourHeader = document.querySelector('.flour-header');
+    const flourHeaderObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          flourHeaderObs.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    if (flourHeader) flourHeaderObs.observe(flourHeader);
+
+    /* ── Flour cards staggered reveal ── */
+    const flourCards = document.querySelectorAll('.flour-card');
+    const flourObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const i = [...flourCards].indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), i * 130);
+          flourObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    flourCards.forEach(c => flourObserver.observe(c));
+
+    /* ── Video play/pause ── */
+    const flourVideo = document.querySelector('.flour-video-wrap video');
+    const flourBtn = document.querySelector('.flour-video-btn');
+    if (flourVideo && flourBtn) {
+      flourBtn.addEventListener('click', () => {
+        if (flourVideo.paused) {
+          flourVideo.play();
+          flourBtn.querySelector('.fv-play').style.display = 'none';
+          flourBtn.querySelector('.fv-pause').style.display = 'block';
+        } else {
+          flourVideo.pause();
+          flourBtn.querySelector('.fv-play').style.display = 'block';
+          flourBtn.querySelector('.fv-pause').style.display = 'none';
+        }
+      });
+    }
+
+    /* ── Pasta cards staggered reveal ── */
+    const pfCards = document.querySelectorAll('.pf-card');
+    const pfObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const i = [...pfCards].indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), i * 140);
+          pfObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    pfCards.forEach(card => pfObserver.observe(card));
+
+    /* ── Counters ── */
+    function animateCounter(el) {
+      const target = +el.dataset.target;
+      const duration = 1400;
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.hero-stat-num').forEach(animateCounter);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    const stats = document.querySelector('.hero-stats');
+    if (stats) observer.observe(stats);
+  </script>
 
 </body>
 </html>
