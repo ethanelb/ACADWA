@@ -29,7 +29,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Serif+Display:ital@0;1&family=Abril+Fatface&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Abril+Fatface&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script>
     history.scrollRestoration = 'manual';
@@ -634,15 +634,7 @@
             if(el) setTimeout(()=>el.classList.add('visible'), 300 + i*180);
           });
           /* count-up for numeric stats */
-          droneSection.querySelectorAll('.drone-stat-num[data-count]').forEach(el => {
-            const target = +el.dataset.count;
-            const start = performance.now(), dur = 1800;
-            (function step(now){
-              const p = Math.min((now-start)/dur,1), ease = 1-Math.pow(1-p,3);
-              el.textContent = Math.floor(ease*target);
-              if(p<1) requestAnimationFrame(step); else el.textContent = target;
-            })(start);
-          });
+          droneSection.querySelectorAll('.drone-stat-num[data-count]').forEach(animateCount);
           droneObs.disconnect();
         }
       }, { threshold: 0.25 });
@@ -670,17 +662,7 @@
     new IntersectionObserver((e) => {
       if (e[0].isIntersecting) {
         impactStats.forEach((s,i) => setTimeout(()=>s.classList.add('visible'), i*120));
-        document.querySelectorAll('.impact-count').forEach(el => {
-          const target = parseFloat(el.dataset.count);
-          const isDecimal = target % 1 !== 0;
-          const dur = 1600, start = performance.now();
-          (function step(now){
-            const p = Math.min((now-start)/dur,1), ease = 1-Math.pow(1-p,3);
-            el.textContent = isDecimal ? (ease*target).toFixed(1) : Math.floor(ease*target);
-            if(p<1) requestAnimationFrame(step);
-            else el.textContent = isDecimal ? target.toFixed(1) : target;
-          })(start);
-        });
+        document.querySelectorAll('.impact-count').forEach(animateCount);
       }
     }, { threshold: 0.3 }).observe(impactStats[0] || document.body);
 
@@ -701,17 +683,7 @@
       if(e[0].isIntersecting){
         aboutFacts.forEach((f,i) => setTimeout(()=>f.classList.add('visible'), i*80));
         /* count-up for numeric facts */
-        document.querySelectorAll('.about-fact-value[data-count]').forEach(el => {
-          const target = +el.dataset.count, suffix = el.dataset.suffix || '';
-          const start = performance.now();
-          const dur = 1600;
-          (function step(now){
-            const p = Math.min((now-start)/dur,1), ease = 1-Math.pow(1-p,3);
-            el.textContent = Math.floor(ease*target).toLocaleString() + suffix;
-            if(p<1) requestAnimationFrame(step);
-            else el.textContent = target.toLocaleString() + suffix;
-          })(start);
-        });
+        document.querySelectorAll('.about-fact-value[data-count]').forEach(animateCount);
       }
     }, {threshold:0.2}).observe(aboutFacts[0] || document.body);
 
@@ -721,15 +693,20 @@
       if(e[0].isIntersecting) qualityItems.forEach((q,i)=>setTimeout(()=>q.classList.add('visible'),i*140));
     }, {threshold:0.2}).observe(qualityItems[0] || document.body);
 
+    /* ── Shared video play/pause control ── */
+    function initVideoControl(btn, video, playIcon, pauseIcon) {
+      btn.addEventListener('click', () => {
+        if (video.paused) { video.play(); playIcon.style.display = 'none'; pauseIcon.style.display = 'block'; }
+        else { video.pause(); playIcon.style.display = 'block'; pauseIcon.style.display = 'none'; }
+      });
+    }
+
     /* ── About: videos play/pause ── */
     document.querySelectorAll('.about-video-wrap').forEach(wrap => {
       const vid = wrap.querySelector('video');
       const btn = wrap.querySelector('.av-btn');
-      if(!vid||!btn) return;
-      btn.addEventListener('click', () => {
-        if(vid.paused){ vid.play(); btn.querySelector('.av-play').style.display='none'; btn.querySelector('.av-pause').style.display='block'; }
-        else { vid.pause(); btn.querySelector('.av-play').style.display='block'; btn.querySelector('.av-pause').style.display='none'; }
-      });
+      if (!vid || !btn) return;
+      initVideoControl(btn, vid, btn.querySelector('.av-play'), btn.querySelector('.av-pause'));
     });
 
     /* ── Private Label: title split + line + items ── */
@@ -783,21 +760,11 @@
     }, { threshold: 0.15 });
     flourCards.forEach(c => flourObserver.observe(c));
 
-    /* ── Video play/pause ── */
+    /* ── Flour: video play/pause ── */
     const flourVideo = document.querySelector('.flour-video-wrap video');
     const flourBtn = document.querySelector('.flour-video-btn');
     if (flourVideo && flourBtn) {
-      flourBtn.addEventListener('click', () => {
-        if (flourVideo.paused) {
-          flourVideo.play();
-          flourBtn.querySelector('.fv-play').style.display = 'none';
-          flourBtn.querySelector('.fv-pause').style.display = 'block';
-        } else {
-          flourVideo.pause();
-          flourBtn.querySelector('.fv-play').style.display = 'block';
-          flourBtn.querySelector('.fv-pause').style.display = 'none';
-        }
-      });
+      initVideoControl(flourBtn, flourVideo, flourBtn.querySelector('.fv-play'), flourBtn.querySelector('.fv-pause'));
     }
 
     /* ── Pasta cards staggered reveal ── */
@@ -813,25 +780,24 @@
     }, { threshold: 0.15 });
     pfCards.forEach(card => pfObserver.observe(card));
 
-    /* ── Counters ── */
-    function animateCounter(el) {
-      const target = +el.dataset.target;
-      const duration = 1400;
-      const start = performance.now();
-      function step(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const ease = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(ease * target);
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = target;
-      }
-      requestAnimationFrame(step);
+    /* ── Shared count-up animation ── */
+    function animateCount(el) {
+      const target = parseFloat(el.dataset.target || el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = target % 1 !== 0;
+      const dur = 1200, start = performance.now();
+      (function step(now) {
+        const p = Math.min((now - start) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = (isDecimal ? (ease * target).toFixed(1) : Math.floor(ease * target).toLocaleString()) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = (isDecimal ? target.toFixed(1) : target.toLocaleString()) + suffix;
+      })(start);
     }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          document.querySelectorAll('.hero-stat-num').forEach(animateCounter);
+          document.querySelectorAll('.hero-stat-num').forEach(animateCount);
           observer.disconnect();
         }
       });
