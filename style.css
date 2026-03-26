@@ -33,6 +33,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.15; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
+/* Offset anchor scroll for fixed nav */
+section[id], div[id] { scroll-margin-top: 68px; }
+
 /* ===== NAV ===== */
 nav {
   position: fixed;
