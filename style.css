@@ -70,6 +70,7 @@ nav {
   letter-spacing: 0.3px;
   transition: background 0.2s;
 }
+.nav-links a.nav-cta { color: #FFFFFF; }
 .nav-cta:hover { background: #7F0D14; }
 
 /* ===== HERO ===== */
