@@ -1203,25 +1203,43 @@ footer {
 /* ===== FLOUR ===== */
 .flour {
   background: #FAFAFA;
-  padding: 48px 0;
 }
-.flour-layout {
+.flour-split {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+.flour-video-col {
+  position: relative;
+  overflow: hidden;
+}
+.flour-video-col .flour-video-wrap {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.flour-video-col .flour-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.flour-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 56px 52px;
+  background: #FFFFFF;
 }
 .flour-header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  background: #9D1019;
-  padding: 32px 28px;
-  border-radius: 4px;
+  gap: 12px;
 }
 .flour-header .section-title {
-  font-size: 36px;
-  color: #FFFFFF;
+  font-size: 48px;
+  color: var(--text);
 }
 .flour-pkg-tag {
   display: flex;
@@ -1230,28 +1248,28 @@ footer {
   margin-top: 4px;
   width: fit-content;
   padding: 6px 12px;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid #EAEAEA;
   border-radius: 100px;
-  background: rgba(255,255,255,0.08);
+  background: #FAFAFA;
 }
 .flour-pkg-tag span {
   font-family: 'DM Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.9);
+  color: var(--text-muted);
   text-transform: uppercase;
 }
 .flour-pkg-div {
   width: 1px;
   height: 10px;
-  background: rgba(255,255,255,0.3);
+  background: #EAEAEA;
   display: block;
 }
-.flour .section-label { color: rgba(255,255,255,0.55); }
-.flour .section-sub { color: rgba(255,255,255,0.6); }
+.flour .section-label { color: #9D1019; }
+.flour .section-sub { color: var(--text-muted); }
 .flour-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 .flour-card {
@@ -1318,10 +1336,7 @@ footer {
 /* Video cinématique */
 .flour-video-wrap {
   position: relative;
-  margin-top: 32px;
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 .flour-video-overlay {
   position: absolute;
@@ -1418,12 +1433,11 @@ footer {
   .pasta-formats-grid { grid-template-columns: 1fr 1fr; height: auto; }
   .pf-card { height: 260px; }
 
-  .flour { padding: 80px 0; }
-  .flour-grid { grid-template-columns: 1fr; gap: 16px; }
-}
-
-@media (max-width: 600px) {
-  .flour-grid { grid-template-columns: 1fr; }
+  .flour-split { grid-template-columns: 1fr; }
+  .flour-video-col { height: 320px; position: relative; }
+  .flour-content-col { padding: 40px 24px; }
+  .flour-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .flour-header .section-title { font-size: 36px; }
 }
 
 /* ═══════════════════════════════════════════

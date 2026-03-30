@@ -179,8 +179,21 @@
 
   <!-- ===== FLOUR ===== -->
   <section class="flour" id="flour">
-    <div class="container">
-      <div class="flour-layout">
+    <div class="flour-split">
+      <!-- Left: Video -->
+      <div class="flour-video-col">
+        <div class="flour-video-wrap">
+          <video src="assets/flour.mp4" autoplay playsinline muted loop></video>
+          <div class="flour-video-overlay">
+            <button class="flour-video-btn" aria-label="Play/Pause">
+              <svg class="fv-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="fv-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Right: Content -->
+      <div class="flour-content-col">
         <div class="flour-header">
           <p class="section-label">Flour Production</p>
           <h2 class="section-title"><span class="flour-t1">Flour,</span><br><span class="flour-t2">From Source</span></h2>
@@ -220,15 +233,6 @@
             <h3>Private Label</h3>
             <p>Your brand. Custom bag sizes, full documentation.</p>
           </div>
-        </div>
-      </div>
-      <div class="flour-video-wrap">
-        <video src="assets/flour.mp4" autoplay playsinline muted loop></video>
-        <div class="flour-video-overlay">
-          <button class="flour-video-btn" aria-label="Play/Pause">
-            <svg class="fv-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            <svg class="fv-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-          </button>
         </div>
       </div>
     </div>
