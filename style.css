@@ -1267,6 +1267,17 @@ footer {
 }
 .flour .section-label { color: #9D1019; }
 .flour .section-sub { color: var(--text-muted); }
+.flour-product-img {
+  border-radius: 6px;
+  overflow: hidden;
+}
+.flour-product-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 .flour-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
