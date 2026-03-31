@@ -1208,7 +1208,9 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  min-height: 640px;
+  min-height: 480px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 .flour-content-col {
   display: flex;
