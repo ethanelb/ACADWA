@@ -51,8 +51,24 @@
       <li><a href="#who-we-are">Our Story</a></li>
       <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
     </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
   </nav>
+
+  <!-- ===== MOBILE NAV ===== -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#products">Our Pasta</a></li>
+      <li><a href="#flour">Our Flour</a></li>
+      <li><a href="#quality">Quality</a></li>
+      <li><a href="#who-we-are">Our Story</a></li>
+    </ul>
+    <a href="#contact" class="mobile-nav-cta">Partner With Us</a>
+  </div>
 
 <main>
   <!-- ===== HERO ===== -->
@@ -540,8 +556,8 @@
         if (heroImage) {
           heroImage.style.backgroundPositionY = `calc(50% + ${window.scrollY * 0.18}px)`;
         }
-        /* impact parallax */
-        if (impactSection && impactImg) {
+        /* impact parallax — desktop only */
+        if (window.innerWidth > 900 && impactSection && impactImg) {
           const rect = impactSection.getBoundingClientRect();
           const wh = window.innerHeight;
           if (rect.top < wh && rect.bottom > 0) {
@@ -818,6 +834,26 @@
 
     const stats = document.querySelector('.hero-stats');
     if (stats) observer.observe(stats);
+
+    /* ── Mobile nav ── */
+    const navBurger = document.getElementById('nav-burger');
+    const mobileNavEl = document.getElementById('mobile-nav');
+    if (navBurger && mobileNavEl) {
+      navBurger.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('menu-open');
+        navBurger.setAttribute('aria-expanded', isOpen);
+        mobileNavEl.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      mobileNavEl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.body.classList.remove('menu-open');
+          navBurger.setAttribute('aria-expanded', 'false');
+          mobileNavEl.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
+      });
+    }
   </script>
 
 </body>
