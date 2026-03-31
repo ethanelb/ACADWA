@@ -1207,8 +1207,7 @@ footer {
 .flour-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  min-height: 480px;
+  grid-template-rows: 280px 280px;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -1233,6 +1232,7 @@ footer {
 .flour-video-col {
   overflow: hidden;
   position: relative;
+  background: #111;
 }
 .flour-video-col .flour-video-wrap {
   position: absolute;
